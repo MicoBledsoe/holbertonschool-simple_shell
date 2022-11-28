@@ -11,7 +11,8 @@ All Code will be compiled this way :
 Compiling the program: gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
  List of allowed functions and system calls
- 
+ | FUNCTIONS | MAN PAGE |
+ | ---------- | --------|
 | access | (man 2 access) |
 
 ‣ chdir (man 2 chdir)
