@@ -12,6 +12,7 @@ Compiling the program: gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
  List of allowed functions and system calls
 ‣ access (man 2 access)
+
 ‣ chdir (man 2 chdir)
 ‣ close (man 2 close)
 ‣ closedir (man 3 closedir)
