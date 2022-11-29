@@ -1,16 +1,16 @@
 # 0x17. C - Simple Shell Project
 
-## DESCRIPTION :
+## Description:
 
 A Unix shell is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
 
-## INSTRUCTIONS :
+## Instructions:
 
 All Code will be compiled this way :
 
 Compiling the program: gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
-### List of allowed functions and system calls :
+### List of allowed functions and system calls:
  | FUNCTIONS | MAN PAGE |
  | ---------- | --------|
 | access | (man 2 access)|
@@ -45,7 +45,7 @@ Compiling the program: gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 | wait4 | (man 2 wait4) |
 | write | (man 2 write) |
 
-## COLLABORATORS : 
+## Collaborators: 
 
 Mico Bledsoe; github - (@MicoBledsoe)
 
