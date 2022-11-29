@@ -1,5 +1,58 @@
-"Cohort 19" "November 28, 2022" "Simple Shell"
+.TH simple_shell "Cohort 19" "November 28, 2022"
+
+.SH NAME
+hsh - a simple UNIX command interpreter
+
+.SH SYNOPSIS
 
 #include "shell.h"
+.B
 
+int main(int argc, char **argv)
 
+.SH DESCRIPTION
+Hsh is a command interpreter that reads, parses, and executes commands from standard input, files, or a command line string.
+
+.SH
+BUILT-IN COMMANDS
+
+.B
+env
+- this is a built-in that prints the current environment
+
+.B
+exit
+- this is a built-in that exits out of the shell
+
+.B
+setenv
+- this is a built-in that defines the value of environment variables
+
+.B
+unsetenv
+- this is a built-in that removes an environment variable from the environment of the calling process
+
+.B
+cd
+- this is a built-in that changes the current working directory
+
+.B
+alias
+- this is a built-in that creates shortcuts for regularly used commands that are long
+
+.B
+help
+- this is a built-in that provides information about available commands and the shell environment
+
+.B
+history
+- this is a built-in that is used to view the previously executed command
+
+.SH OPTIONS
+None.
+
+.SH BUGS
+No known bugs at this time.
+
+.SH AUTHORS
+Ricardo Corona, Mico Bledsoe, Deion Jones.
