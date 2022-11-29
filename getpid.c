@@ -6,8 +6,8 @@
  *
  * Return: Always 0.
  */
-int main() 
+int main(void)
 {
-    printf("%d", (int)getpid());
-    return 0;
+printf("%d", (int)getpid());
+return (0);
 }
