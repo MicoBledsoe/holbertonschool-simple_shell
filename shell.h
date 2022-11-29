@@ -13,4 +13,36 @@
 #include <signal.h>
 #include <limits.h>
 
-#endif
+/* Global array to hold environment variables */
+extern char **nvrmt;
+
+/* MACRO to define environment */
+#define _GNU_SOURCE
+
+/* Main function */
+int main(int argc, char **argv);
+
+/* Environment function */
+void envbuiltin(char **environ);
+
+/* Get environment (path) function */
+char *_getenv(char *name);
+
+/* Helper functions for strings */
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
+int _strcmp(char *s1, char *s2);
+char *_strdup(char *str);
+int _strncmp(char *s1, char *s2, int n);
+char *string_nconcat(char *s1, char *s2, unsigned int n);
+char *_strstr(char *haystack, char *needle);
+
+/* Free double pointer function */
+void double_free(char **array);
+
+/* Helper functions for writing */
+int _putchar(char c);
+void _puts(char *s);
+
+#endif SHELL_H
