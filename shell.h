@@ -37,6 +37,7 @@ char *_strdup(char *str);
 int _strncmp(char *s1, char *s2, int n);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 char *_strstr(char *haystack, char *needle);
+int m_getline();
 
 /* Free double pointer function */
 void double_free(char **array);
