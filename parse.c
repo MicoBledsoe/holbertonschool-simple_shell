@@ -21,7 +21,6 @@ int print_string(char *str)
 
 int parse_line(char *str)
 {
-	int BUFFER_SIZE;
 	int bufsize = BUFFER_SIZE, count = 0;
 /* allocating buffer size for amount of tokens */
 	char *tokens[1024];
