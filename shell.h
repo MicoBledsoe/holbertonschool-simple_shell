@@ -25,7 +25,7 @@ extern char **nvrmt;
 int main(int argc, char **argv);
 
 /* Environment function */
-void envbuiltin(char **environ);
+void envbuiltin(char **nvrmt);
 
 /* Get environment (path) function */
 char *_getenv(char *name);

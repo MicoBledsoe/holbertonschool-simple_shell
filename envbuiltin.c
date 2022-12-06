@@ -2,18 +2,18 @@
 
 /**
 * envbuiltin - function that prints current environment
-* @environ: double pointer to list of env variables
+* @nvrmt: double pointer to list of env variables
 * Return: 0 on success
 */
 
-void envbuiltin(char **environ)
+void envbuiltin(char **nvrmt)
 {
 	int i;
 
 	i = 0;
-	while (environ[i] != '\0')
+	while (nvrmt[i] != '\0')
 	{
-		_puts(environ[i]);
+		_puts(nvrmt[i]);
 		_putchar('\n');
 		i++;
 	}
