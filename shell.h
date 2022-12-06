@@ -48,4 +48,4 @@ void double_free(char **array);
 int _putchar(char c);
 void _puts(char *s);
 
-#endif SHELL_H
+#endif
