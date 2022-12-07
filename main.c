@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 /* print prompt every time only in interactive mode */
 		if (isatty(STDIN_FILENO) == 1)
 		{
-			prompt = "$ ";
+			prompt = "($) ";
 			_puts(prompt);
 		}
 
@@ -89,7 +89,7 @@ int main(int argc, char **argv)
 /* (if buffer is "env", return our envbuiltin function) */
 		if (_strcmp(buffer, "env") == 0)
 		{
-			envbuiltin(nvrmt);
+			envbuiltin(environ);
 			free(buffer);
 			double_free(array);
 			continue;
@@ -148,7 +148,7 @@ int main(int argc, char **argv)
 			{
 /* execve(path, argv, env) */
 /* if it is executed and an error occurs, return -1 */
-				if (execve(pathname, array, nvrmt) == -1)
+				if (execve(pathname, array, environ) == -1)
 					perror("Error");
 				free(pathname);
 				free(array[0]);
