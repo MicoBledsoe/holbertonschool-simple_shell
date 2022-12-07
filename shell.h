@@ -16,7 +16,7 @@
 #include <limits.h>
 
 /* Global array to hold environment variables */
-extern char **nvrmt;
+extern char **environ;
 
 /* MACRO to define environment */
 #define _GNU_SOURCE
