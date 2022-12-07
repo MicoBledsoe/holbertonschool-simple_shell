@@ -57,10 +57,9 @@ char *_strdup(char *str)
  * @n: d
  * Return: 0
  */
-int _strncmp(char *s1, char *s2, int n, int a)
+int _strncmp(char *s1, char *s2, int n)
 {
 int a;
-int n;
 
 for (a = 0; s1[a] != '\0' || s2[a] != '\0'; a++)
 {

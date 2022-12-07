@@ -21,9 +21,6 @@ extern char **nvrmt;
 /* MACRO to define environment */
 #define _GNU_SOURCE
 
-/* Main function */
-int main(int argc, char **argv);
-
 /* Environment function */
 void envbuiltin(char **environ);
 
@@ -40,6 +37,12 @@ int _strncmp(char *s1, char *s2, int n);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 char *_strstr(char *haystack, char *needle);
 int m_getline();
+
+/* EXTRAS */
+int print_string(char *str);
+int parse_line(char *str);
+void double_free(char **array);
+void builtfunc(char **args, int *exstat, char *line);
 
 /* Free double pointer function */
 void double_free(char **array);
