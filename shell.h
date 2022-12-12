@@ -38,6 +38,7 @@ char *_strstr(char *haystack, char *needle);
 
 /* free double pointer function */
 void double_free(char **array);
+void builtfunc(char **args, int *exstat, char *line)
 
 /* helper funcs for writing */
 int _putchar(char c);
