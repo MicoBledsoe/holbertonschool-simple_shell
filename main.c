@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 /* print prompt every time only in interactive mode */
 		if (isatty(STDIN_FILENO) == 1)
 		{
-			prompt = "$ ";
+			prompt = "($) ";
 			_puts(prompt);
 		}
 
