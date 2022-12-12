@@ -1,7 +1,8 @@
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 #include "shell.h"
-
-/* Global array to hold environment variables */
-extern char **environ;
 
 /**
  * _getenv - gets environment for path

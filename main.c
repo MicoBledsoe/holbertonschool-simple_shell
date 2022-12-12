@@ -1,4 +1,10 @@
 #include "shell.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stdio.h>
 
 /**
 * _putchar - writes the character c to stdout
@@ -64,7 +70,7 @@ int main(int argc, char **argv)
 /* print prompt every time only in interactive mode */
 		if (isatty(STDIN_FILENO) == 1)
 		{
-			prompt = "($) ";
+			prompt = "$ ";
 			_puts(prompt);
 		}
 

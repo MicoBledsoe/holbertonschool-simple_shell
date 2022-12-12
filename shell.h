@@ -3,31 +3,30 @@
 
 #define BUFFER_SIZE 1024
 
-/* Libraries */
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h> /* standard library */
+#include <stdio.h> /* standard input/output */
+#include <string.h> /* handles strings */
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#include <string.h>
-#include <signal.h>
-#include <limits.h>
+#include <unistd.h>
 
-/* Global array to hold environment variables */
+/* global array to hold environment variables */
 extern char **environ;
 
-/* MACRO to define environment */
+/* MACRO to define environ */
 #define _GNU_SOURCE
 
-/* Environment function */
+/* main function */
+int main(int argc, char **argv);
+
+/* environment function */
 void envbuiltin(char **environ);
 
-/* Get environment (path) function */
+/* get environment (path) function */
 char *_getenv(char *name);
 
-/* Helper functions for strings */
+/* helper funcs for strings */
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
@@ -36,19 +35,12 @@ char *_strdup(char *str);
 int _strncmp(char *s1, char *s2, int n);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 char *_strstr(char *haystack, char *needle);
-int m_getline();
 
-/* EXTRAS */
-int print_string(char *str);
-int parse_line(char *str);
-void double_free(char **array);
-void builtfunc(char **args, int *exstat, char *line);
-
-/* Free double pointer function */
+/* free double pointer function */
 void double_free(char **array);
 
-/* Helper functions for writing */
+/* helper funcs for writing */
 int _putchar(char c);
 void _puts(char *s);
 
-#endif
+#endif /* SHELL_H */
