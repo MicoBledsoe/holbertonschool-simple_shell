@@ -11,7 +11,7 @@ void envbuiltin(char **environ)
 	int i;
 
 	i = 0;
-	while (environ[i] != '\0')
+	while (environ[i])
 	{
 		_puts(environ[i]);
 		_putchar('\n');
