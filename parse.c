@@ -16,6 +16,8 @@ int print_string(char *str)
 /**
  * parse_line - tokenizing each line that is read
  * @str: line
+ * detailed explanation: This is the print_string function, which is a helper function used by the parse_line function. This function takes a char pointer called str as input, which points to the string that is to be printed.
+ * return (write(STDOUT_FILENO, str, strlen(str)));: This is the return statement for the function. It writes the input string, str, to the standard output (i.e. the terminal) using the write function, which is a standard C function for writing data to a file descriptor. The write function takes three arguments: the file descriptor to write to, the string to write, and the length of the string. In this case, the file descriptor is STDOUT_FILENO, which is a macro that represents the standard output file descriptor. The length of the string is obtained using the strlen function, which is a standard C function for finding the length of a string. The write function returns the number of bytes that were written, so this value is also returned by the print_string function.
  * Return: number of tokens which is count
  */
 
@@ -44,6 +46,19 @@ int parse_line(char *str)
 /* token is equal to the last token which is NULL */
 		token = strtok(NULL, delim);
 	}
+/* This is the last block of code in the parse_line function, which is the main function for splitting a string into tokens and returning the number of tokens that were found. Here is an explanation of each line in this block of code:
+
+/* return number of tokens */: This is a comment indicating that the next line of code returns the number of tokens that were found.
+
+/* printf("%s\n", tokens[count - 1]);*/: This is a commented-out line that would print the last token in the tokens array, followed by a newline character. This line is commented out because the next line of code does the same thing using the print_string function.
+
+print_string(tokens[count - 1]);: This line uses the print_string function to print the last token in the tokens array. The print_string function simply writes the input string to the standard output, so this line prints the last token to the terminal.
+
+print_string("\n");: This line uses the print_string function to print a newline character to the standard output. This adds a newline after the last token that was printed in the previous line.
+
+tokens[count] = NULL;: This line sets the last element in the tokens array to NULL. This is useful because NULL is a special value that indicates the end of an array of char pointers.
+
+return (count);: This is the final line of the function, which returns the number of tokens that were found. This value is stored in the count variable, which is incremented for each token that is found in the input string. */
 /* return number of tokens */
 /*	printf("%s\n", tokens[count - 1]);*/
 	print_string(tokens[count - 1]);
