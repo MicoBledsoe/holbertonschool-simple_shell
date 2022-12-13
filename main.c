@@ -71,6 +71,7 @@ int main(int argc, char **argv)
 /*	char *names[526]; */
 	(void)argc, (void)argv;
 
+/* This block of code below sets all elements of the array variable to NULL, and then enters an infinite loop. Inside the loop, it checks whether the program is running in interactive mode (where input is entered directly from the keyboard rather than from a file or another source) by calling the isatty() function. If the program is running in interactive mode, it prints a prompt string to the screen using the _puts() function. This prompts the user to enter a command. The loop will continue to run and print the prompt until the program is exited. */
 /* accounting for junk values */
 	for (i = 0; i < 1024; i++)
 		array[i] = NULL;
@@ -109,6 +110,7 @@ int main(int argc, char **argv)
 			double_free(array);
 			continue;
 		}
+/* This block of code below is responsible for executing the command entered by the user. If the input is not a built-in command (such as "env" or "exit"), the code will attempt to execute the input as a command in the shell by searching the directories specified in the PATH environment variable for a valid, executable file with the same name as the command entered by the user. If a valid file is found, the code forks a child process and uses the execve() function to execute the command. Otherwise, the code sets the pathname variable to the command entered by the user and attempts to execute the command from the current working directory. The code continues to prompt for input and execute commands until it is exited. */
 /* if the input is a command typed "exit", the exit func will be called */
 		if (_strcmp(buffer, "exit") == 0)
 		{
