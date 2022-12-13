@@ -42,7 +42,7 @@ int m_getline();
 int print_string(char *str);
 int parse_line(char *str);
 void double_free(char **array);
-void builtfunc(char **args, int *exstat, char *line);
+void builtin_exit(char **buf, char **args, char **env, int *exstat)
 
 /* Free double pointer function */
 void double_free(char **array);
