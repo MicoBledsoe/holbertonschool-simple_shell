@@ -138,6 +138,10 @@ char *_strdup(char *str)
  * @s1: character
  * @s2: character
  * @n: integer
+ * Detailed Description of BLOCK: contains a function called _strncmp that takes in three arguments: two strings and an integer. The function compares the two strings character by character, starting from the first character in each string, until it reaches the end of one of the strings or until it has compared n characters, whichever comes first.
+The function starts by declaring a local variable a and initializing it to 0. This variable will be used as a loop counter to keep track of the current position in the strings.
+Next, the function enters a for loop, which will continue to execute as long as the character at the current position in the first string (specified by the a variable) is not the null character ('\0') or the character at the current position in the second string is not the null character ('\0'). Inside the loop, the function first checks if the a variable is equal to n. If it is, the function breaks out of the loop. Otherwise, the function compares the character at the current position in the first string to the character at the current position in the second string. If the two characters are not equal, the function returns the difference between the two characters (i.e., s1[a] - s2[a]).
+Once the for loop ends, the function returns 0, indicating that the two strings are equal up to the nth character.
  * Return: comparison or 0
  */
 int _strncmp(char *s1, char *s2, int n)
@@ -194,6 +198,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  * description: locate a substring
  * @haystack: character
  * @needle: character
+ * Detailed Description of BLOCK: contains a function called _strstr that takes in two strings as arguments: a haystack and a needle. The function searches the haystack string for the needle string and returns a pointer to the first occurrence of the needle string in the haystack string, or NULL if the needle string is not found in the haystack string.
+The function starts by declaring two local variables: i and j. The i variable will be used to keep track of the current position in the haystack string, and the j variable will be used to keep track of the current position in the needle string.
+Next, the function enters an outer for loop, which will continue to execute as long as the character at the current position in the haystack string (specified by the i variable) is not the null character ('\0'). Inside the outer for loop, the function enters an inner for loop, which will continue to execute as long as the character at the current position in the needle string (specified by the j variable) is not the null character ('\0'). Inside the inner for loop, the function compares the character at the current position in the haystack string (specified by the i and j variables) to the character at the current position in the needle string. If the two characters are not equal, the function breaks out of the inner for loop.
+Once the inner for loop ends, the function checks if the j variable is equal to the null character ('\0') in the needle string. If it is, the function has found the needle string in the haystack string, so it returns a pointer to the start of the needle string in the haystack string. Otherwise, the function continues to the next iteration of the outer for loop.
+Once the outer for loop ends, the function returns NULL, indicating that the needle string was not found in the haystack string.
  * Return: NULL
  */
 
