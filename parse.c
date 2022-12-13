@@ -1,5 +1,8 @@
 #include "shell.h"
 
+/** This code is a function that takes a string as input and returns the number of tokens (i.e. words separated by spaces) in the string. It does this by using the strtok function, which is a standard C function for splitting a string into tokens based on a delimiter. In this case, the delimiter is a space, so the function splits the string into individual words. It then stores these words in an array of char pointers called tokens, and returns the number of tokens that were found.
+The function also has a helper function, print_string, which simply writes the input string to the standard output (i.e. the terminal). This is used to print the last token in the tokens array, followed by a newline character. */
+
 /**
  * print_string - prints string
  * @str: char
