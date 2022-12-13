@@ -163,6 +163,11 @@ int _strncmp(char *s1, char *s2, int n)
  * @s1: character
  * @s2: character
  * @n: unsigned integer
+ * Detailed Description of BLOCK: This code block contains a function called string_nconcat that takes in three arguments: two strings, s1 and s2, and an unsigned integer, n. The function concatenates n characters from the s2 string to the s1 string and returns a pointer to the resulting concatenated string. If s1 is NULL, the function treats it as an empty string. If s2 is NULL, the function treats it as an empty string.
+The function starts by declaring four local variables: newstring, s1len, i, and j. The s1len variable is initialized by looping through the s1 string until the null character ('\0') is found, and it will be used to store the length of the s1 string. The newstring variable is initialized by allocating memory for the concatenated string using malloc, and it will be used to store the concatenated string. The i and j variables will be used as loop counters to keep track of the current positions in the s1 and s2 strings, respectively.
+Next, the function enters a for loop, which will continue to execute as long as the character at the current position in the s1 string (specified by the i variable) is not the null character ('\0'). Inside the for loop, the function copies the character at the current position in the s1 string to the corresponding position in the newstring string, and the i variable is incremented to move to the next character in the s1 string.
+Once the for loop ends, the function enters another for loop, which will continue to execute as long as the j variable is less than n and the character at the current position in the s2 string (specified by the j variable) is not the null character ('\0'). Inside the for loop, the function copies the character at the current position in the s2 string to the corresponding position in the newstring string, and both the i and j variables are incremented to move to the next characters in the s1 and s2 strings, respectively.
+Once the for loop ends, the function sets. Once the for loop ends, the code sets the null character ('\0') at the end of newstring to mark the end of the concatenated string. Finally, the function returns a pointer to newstring, which will contain the concatenated string.
  * Return: new string, or NULL
  */
 
