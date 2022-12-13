@@ -109,6 +109,10 @@ int _strcmp(char *s1, char *s2)
 * _strdup - Duplicate a string using malloc
 * @str: string to duplicate
 * Description: 0x0B-malloc_free/1-strdup.c
+* Detailed Description of BLOCK: contains a C function called _strdup(), which is used to duplicate a string. The function takes a single argument, str, which is a pointer to the string that will be duplicated. The function also declares two local variables: a and i. The a variable will be used to store a pointer to the duplicated string, and the i variable will be used to keep track of the length of str.
+The function starts by checking if str is NULL, in which case it immediately returns NULL. If str is not NULL, the function enters a for loop to calculate the length of str by looping through the string until it reaches the null character ('\0'), which indicates the end of the string.
+Next, the function uses the malloc() function to allocate memory for the duplicated string. It calculates the size of the memory block to allocate by multiplying the length of str (stored in the i variable) by the size of a char type, and adding 1 to account for the null character at the end of the string. If malloc() returns NULL, indicating that it was unable to allocate the required memory, the function immediately returns NULL.
+If malloc() returns a non-NULL value, the function enters another for loop to copy the characters in str to the duplicated string stored in a. The loop continues until it has copied all the characters in str, and sets the null character ('\0') at the end of a to mark the end of the duplicated string. Finally, the function returns a pointer to a, which will contain the duplicated string.
 * Return: Pointer to a the new duped string
 **/
 
