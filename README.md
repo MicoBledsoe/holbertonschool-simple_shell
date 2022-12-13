@@ -49,6 +49,4 @@ Compiling the program: gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 Mico Bledsoe; github - (@MicoBledsoe)
 
-Deion Jones; github - (@DeionJones)
-
 Ricardo Corona; github -(@LW068)
