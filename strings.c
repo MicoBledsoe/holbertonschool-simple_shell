@@ -7,6 +7,10 @@
 * _strlen - returns the length of string
 * @s: the string being passed
 * Description: 0x05-pointers_arrays_strings/2-strlen.c
+* Detailed Description of code BLOCK: calculates the length of a string. The function is called _strlen and it takes a single argument, a pointer to a character (char *s), which is the string whose length we want to calculate.
+The function starts by declaring a local variable count and initializing it to 0. This variable will be used to keep track of the number of characters in the string.
+Next, the function enters a while loop, which will continue to execute as long as the character at the current position in the string (specified by the count variable) is not the null character ('\0'). Inside the loop, the count variable is incremented to move to the next character in the string.
+Once the while loop ends, the function returns the final value of the count variable, which will be the length of the string.
 * Return: the length of the string
 **/
 
@@ -25,6 +29,10 @@ return (count);
 * @dest: char type string
 * @src: char type string
 * Description: 0x05-pointers_arrays_strings/9-strcpy.c
+* Detailed Description of BLOCK: copies the contents of one string to another. The function is called _strcpy and it takes two arguments: a pointer to a character (char *dest), which is the destination string where the copied characters will be stored, and a pointer to a character (char *src), which is the source string that will be copied.
+The function starts by declaring a local variable i and initializing it to 0. This variable will be used as a loop counter to keep track of the current position in the source string.
+Next, the function enters a for loop, which will continue to execute as long as the character at the current position in the source string (specified by the i variable) is not the null character ('\0'). Inside the loop, the character at the current position in the source string is copied to the corresponding position in the destination string, and the i variable is incremented to move to the next character in the source string.
+Once the for loop ends, the function sets the null character ('\0') at the end of the destination string, to mark the end of the copied string. Finally, the function returns a pointer to the destination string.
 * Return: Pointer to `dest`
 **/
 
@@ -45,6 +53,10 @@ char *_strcpy(char *dest, char *src)
 * @dest: the string being concatenated
 * @src: the string being concatenated
 * Description: 0x06-pointers_arrays_strings/0-strcat.c
+* Detailed Description of BLOCK: concatenates (joins) two strings together. The function is called _strcat and it takes two arguments: a pointer to a character (char *dest), which is the destination string where the concatenated string will be stored, and a pointer to a character (char *src), which is the source string that will be concatenated to the end of the destination string.
+The function starts by declaring three local variables: i, s, and n. The s variable is initialized by looping through the source string until the null character ('\0') is found, and it will be used to store the length of the source string. The n variable is initialized by looping through the destination string until the null character ('\0') is found, and it will be used to store the length of the destination string. Finally, the i variable is initialized to 0 and will be used as a loop counter.
+Next, the function enters a for loop, which will continue to execute as long as the i variable is less than or equal to the length of the source string (stored in the s variable). Inside the loop, the character at the current position in the source string is copied to the corresponding position in the destination string (which is n + i characters from the start of the string, where n is the length of the destination string and i is the current position in the source string), and the i variable is incremented to move to the next character in the source string.
+Once the for loop ends, the function returns a pointer to the destination string. This string will contain the original destination string, followed by the concatenated source string.
 * Return: dest
 **/
 
@@ -74,6 +86,10 @@ char *_strcat(char *dest, char *src)
 * @s1: string
 * @s2: string
 * Description: 0x06-pointers_arrays_strings/3-strcmp.c
+* Detailed Description of BLOCK: compares two strings and returns 0 if they are the same, or a non-zero value if they are different. The function is called _strcmp and it takes two arguments: a pointer to a character (char *s1), which is the first string to compare, and a pointer to a character (char *s2), which is the second string to compare.
+The function starts by declaring a local variable a and initializing it to 0. This variable will be used as a loop counter to keep track of the current position in the two strings.
+Next, the function enters a for loop, which will continue to execute as long as the character at the current position in either of the two strings (specified by the a variable) is not the null character ('\0'). Inside the loop, the function compares the characters at the current position in the two strings, and if they are different, the function returns the difference between the two characters (using the s1[a] - s2[a] expression). This difference will be a non-zero value if the two strings are different, or 0 if the two strings are the same up to the current position.
+Once the for loop ends, the function returns 0, indicating that the two strings are the same. This will happen if the two strings have the same length and their characters are the same at each position. If the two strings have different lengths, the for loop will end when the null character ('\0') is reached in one of the strings, and the difference between the two strings will have been returned by the if statement inside the loop.
 * Return: 0
 **/
 
