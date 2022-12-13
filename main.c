@@ -3,7 +3,14 @@
 /**
 * _putchar - writes the character c to stdout
 * @c: The character to print
-*
+* Deetailed Description: This code defines a function called _putchar that takes a character as an argument and writes it to the standard output (stdout). The function is implemented as follows:
+The function starts by declaring its argument c of type char, which is the character to be written to stdout.
+The write function is called with the following arguments:
+1: the file descriptor for stdout
+&c: the address of the c character
+1: the number of characters to write (in this case, only one character)
+The return value of write is returned by _putchar, which indicates whether the write was successful. If the write was successful, the function returns 1. Otherwise, it returns -1 and sets the errno variable to indicate the error that occurred.
+In short, this function is a simple wrapper around the write function that writes a single character to stdout. It is used later in the code to write characters one at a time, rather than writing strings all at once.
 * Return: On success 1.
 * On error, -1 is returned, and errno is set appropriately.
 */
@@ -16,6 +23,14 @@ int _putchar(char c)
 /**
 * _puts - custom function prints a string
 * @s: pointer to the string
+* Detailed Description: This code defines a function called _puts that takes a string as an argument and writes it to the standard output (stdout). The function is implemented as follows:
+The function starts by declaring its argument s of type char *, which is a pointer to the string to be written to stdout.
+A local variable i of type int is declared and initialized to 0. This variable will be used as an index into the s string to access individual characters.
+The function enters a while loop that continues until the null terminator character (\0) is reached in the s string.
+Inside the loop, the _putchar function is called with the i-th character of the s string as its argument. This writes the character to stdout.
+The i variable is incremented by 1 to move on to the next character in the s string.
+The loop repeats until the null terminator character is reached, at which point the function exits.
+In short, this function is a simple implementation of the puts function that writes a string to stdout. It does this by calling the _putchar function to write each character of the s string one at a time, until the end of the string is reached. This is useful for printing prompts and other messages to the user in the command interpreter.
 * Return: void
 */
 
