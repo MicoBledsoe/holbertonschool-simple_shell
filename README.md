@@ -12,7 +12,9 @@ This program is a simple shell in the C programming language. It takes user inpu
 
 All Code will be compiled this way :
 
-Compiling the program: gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+'''
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+'''
 
 ### List of allowed functions and system calls:
  | FUNCTIONS | MAN PAGE |
