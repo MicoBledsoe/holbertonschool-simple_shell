@@ -10,11 +10,11 @@ This program is a simple shell in the C programming language. It takes user inpu
 
 ## Instructions:
 
-All Code will be compiled this way :
+All code is compiled this way:
 
-'''
+```
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
-'''
+```
 
 ### List of allowed functions and system calls:
  | FUNCTIONS | MAN PAGE |
