@@ -55,4 +55,4 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 Mico Bledsoe; github - (@MicoBledsoe)
 
-Ricardo Corona; github -(@LW068)
+Ricardo Corona; github - (@LW068)
