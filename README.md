@@ -1,8 +1,12 @@
 # 0x17. C - Simple Shell Project
 
-## Description:
+## Definition:
 
 A Unix shell is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
+
+## Description: 
+
+This program is a simple shell in the C programming language. It takes user input, parses it, and then executes the corresponding command. The program includes several custom functions, such as _putchar and _puts, which are used to write characters and strings to the standard output, respectively. The main function is the entry point of the program and is where the majority of the shell's functionality is implemented. The program reads a line of input from the user, parses it into tokens, and then checks if the input matches any built-in commands (e.g. env and exit). If it does, the corresponding built-in function is called. Otherwise, the program attempts to execute the input as a command by searching the directories listed in the PATH environment variable for a matching executable file. If one is found, it is executed with the provided arguments. If not, an error message is printed. The program runs in a loop, allowing the user to enter multiple commands.
 
 ## Instructions:
 
