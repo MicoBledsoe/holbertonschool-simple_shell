@@ -8,7 +8,7 @@ hsh - a simple UNIX command interpreter
 #include "shell.h"
 .B
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 
 .SH DESCRIPTION
 Hsh is a command interpreter that reads, parses, and executes commands from standard input, files, or a command line string.
