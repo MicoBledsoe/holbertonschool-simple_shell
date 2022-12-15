@@ -4,7 +4,7 @@
 * _putchar - writes the character c to stdout
 * @c: The character to print
 * Deetailed Description: This code defines a function called _putchar that takes a character as an argument and writes it to the standard output (stdout). The function is implemented as follows:
-The function starts by declaring its argument c of type char, which is the character to be written to stdout.
+The function STARTS by declaring its argument c of type char, which is the character to be written to stdout.
 The write function is called with the following arguments:
 1: the file descriptor for stdout
 &c: the address of the c character
@@ -24,7 +24,7 @@ int _putchar(char c)
 * _puts - custom function prints a string
 * @s: pointer to the string
 * Detailed Description: This code defines a function called _puts that takes a string as an argument and writes it to the standard output (stdout). The function is implemented as follows:
-The function starts by declaring its argument s of type char *, which is a pointer to the string to be written to stdout.
+The function STARTS by declaring its argument s of type char *, which is a pointer to the string to be written to stdout.
 A local variable i of type int is declared and initialized to 0. This variable will be used as an index into the s string to access individual characters.
 The function enters a while loop that continues until the null terminator character (\0) is reached in the s string.
 Inside the loop, the _putchar function is called with the i-th character of the s string as its argument. This writes the character to stdout.
@@ -65,7 +65,7 @@ The array variable is an array of char * values that will be used to store the i
 The token variable is a char * that will be used to store the result of the strtok() function when parsing the input entered by the user into individual tokens. It is not initialized in this code block, so its value is undefined.*/
 	char *buffer = NULL, *prompt, *array[1024], *token;
 
-/* cpid is child process // this whole code block below all the way to (void)argc, and (void)argv : This code block declares and initializes several variables that will be used later in the program.
+/* cpid is child process // this whole code block BELOW all the way to (void)argc, and (void)argv : This code block declares and initializes several variables that will be used later in the program.
 The cpid variable is declared as pid_t and will be used to store the process ID of the child process that is created when a command entered by the user is executed. The pid_t type is a signed integer type used to represent process IDs.The status variable is an int that will be used to store the status of the child process when it terminates. This information can be used to determine whether the child process terminated successfully or not.
 The exstat variable is an int that will be used to store the exit status of the shell program. It is initialized to 0, which indicates that the program has not yet exited.
 The pPath variable is a char * that will be used to store the value of the PATH environment variable, which specifies the directories where the shell should search for commands.
