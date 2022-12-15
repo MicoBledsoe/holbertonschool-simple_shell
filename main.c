@@ -186,7 +186,25 @@ If "access" does not return 0, it means that the file is not executable, and the
 			free(pathname);
 			pathname = NULL; /* Line 187 */
 		}
-		if (pathtoken == NULL)
+		if (pathtoken == NULL) /* From Line 189 - 227 this CODE BLOCK IS DOING : It follows a block of code that searches the directories specified by the "PATH" environment variable for the command that the user entered.
+
+The code starts by checking if the "pathtoken" variable is NULL, indicating that no executable file was found in any of the directories in the "PATH" variable. If "pathtoken" is NULL, the code assumes that the user-entered command is the full path to the command, and it copies the command into the "pathname" variable using the "strdup" function.
+
+Next, the code frees the memory allocated to the "pPath" variable, which is no longer needed. This is done to avoid memory leaks and ensure that the program does not use up too much memory.
+
+The code then checks if the "token" variable is NULL, which indicates that the user entered a command that the program recognizes as a built-in shell command. If "token" is NULL, the code continues to the next section of code, which is responsible for executing the user-entered command.
+
+The code starts by calling the "fork" function, which creates a new child process that is a duplicate of the current parent process. The return value of "fork" is stored in the "cpid" variable.
+
+If "fork" returns -1, it indicates that an error occurred while creating the child process, and the code calls the "perror" function to print an error message to the standard error output. The function then returns 1, indicating that the program encountered an error.
+
+If "fork" returns 0, it indicates that the child process was successfully created, and the code calls the "execve" function to execute the user-entered command. The "execve" function takes three arguments: the path to the command to execute, the command line arguments passed to the command, and the environment in which the command should be executed. In this case, the path to the command is stored in the "pathname" variable, the command line arguments are stored in the "array" variable, and the environment is passed as the "environ" variable.
+
+If "execve" returns -1, it indicates that an error occurred while executing the command, and the code calls the "perror" function to print an error message to the standard error output. The code then frees the memory allocated to the "pathname", "array[0]", and "buffer" variables and exits the program with the exit status -1.
+
+If "execve" does not return -1, it indicates that the command was executed successfully. In this case, the child process continues to run the command, while the parent process enters a "wait" loop, which waits for a signal to be received or the child process to exit. When the child process terminates, the parent process continues to the next line of code, which calls the "double_free" function with the "array" variable as its argument, and then frees the memory allocated to the "pathname" and "buffer" variables.
+
+Finally, after all of the commands have been executed, the function returns 0, indicating that the program ran successfully. */
 			pathname = _strdup(array[0]);
 		free(pPath);
 /* if not any of the above statements, fork child process */
