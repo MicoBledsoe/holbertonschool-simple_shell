@@ -23,6 +23,24 @@ int print_string(char *str)
  * Return: number of tokens which is count
  */
 
+/* The function first declares and initializes local variables for the buffer size and the count of tokens. 
+It then declares an array of char pointers called tokens, which will be used to store the individual words in the input string.
+
+The function then uses the strtok function to split the input string into tokens based on the space character as a delimiter. 
+It stores the first token in the token variable, and then checks if the token is NULL. If the token is NULL, the function returns -1 
+to indicate that the string was empty or did not contain any tokens.
+
+If the token is not NULL, the function enters a while loop that continues to execute as long as the token variable is not NULL. 
+Inside the while loop, the function stores the current token in the tokens array and increments the count of tokens. 
+It also checks if the count of tokens has reached the buffer size, and if so, it returns -1 to indicate that the function has failed. 
+After storing the current token in the tokens array, the function sets the token variable to the next token in the input string using the strtok function.
+
+Once the while loop ends, the function returns the count of tokens that were found in the input string.
+This value indicates the number of words that were separated by spaces in the input string.
+
+
+*/
+
 int parse_line(char *str)
 {
 	int bufsize = BUFFER_SIZE, count = 0;
