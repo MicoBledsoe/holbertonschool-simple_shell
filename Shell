@@ -1,36 +1,55 @@
-The shell.h file is a header file that declares the functions and variables used by the simple shell program. It also includes the necessary standard library headers and defines some macros that are used by the program.
+The shell.h file is a header file that declares the functions and variables used by the simple shell program. 
+It also includes the necessary standard library headers and defines some macros that are used by the program.
 
 
 
 
-The main.c file contains the main() function, which is the entry point for the shell program. This function is responsible for initializing the shell, reading input from the user, parsing the input into tokens, and executing the corresponding commands. It uses the functions declared in shell.h and the functions in the parse.c, strings.c, and _getenv.c files to perform these tasks.
+The main.c file contains the main() function, which is the entry point for the shell program. This function is responsible for initializing the shell,
+reading input from the user, parsing the input into tokens, and executing the corresponding commands. 
+It uses the functions declared in shell.h and the functions in the parse.c, 
+strings.c, and _getenv.c files to perform these tasks.
 
 
 
 
-The parse.c file contains the parse_line() function, which is used to split a string of user input into individual tokens (i.e. words separated by spaces). It uses the strtok() function to split the string into tokens, and then stores the tokens in an array of char pointers. The function returns the number of tokens that were found.
+The parse.c file contains the parse_line() function, which is used to split a string of user input into individual tokens 
+(i.e. words separated by spaces). 
+It uses the strtok() function to split the string into tokens, and then stores the tokens in an array of char pointers.
+The function returns the number of tokens that were found.
 
 
 
 
-The strings.c file contains several helper functions that are used to manipulate strings. These include functions for finding the length of a string, copying a string, concatenating two strings, comparing two strings, duplicating a string, and finding a substring within a string. These functions are used by the other parts of the simple shell program to perform common string manipulation tasks.
+The strings.c file contains several helper functions that are used to manipulate strings. These include functions for finding the length of a string, 
+copying a string, concatenating two strings, comparing two strings, duplicating a string, and finding a substring within a string. 
+These functions are used by the other parts of the simple shell program to perform common string manipulation tasks.
 
 
 
 
-The _getenv.c file contains the _getenv() function, which is used to retrieve the value of an environment variable. The function takes the name of the environment variable as an argument and searches the environ global array for the variable. If the variable is found, the function returns its value as a string. Otherwise, it returns NULL.
+The _getenv.c file contains the _getenv() function, which is used to retrieve the value of an environment variable. 
+The function takes the name of the environment variable as an argument and searches the environ global array for the variable. 
+If the variable is found, the function returns its value as a string. Otherwise, it returns NULL.
 
 
 
 
-The env.c file contains the envbuiltin() function, which is used to implement the env builtin command. This command is built into the shell and can be used to print the current environment variables to the standard output. The envbuiltin() function takes the environ global array as an argument and uses a while loop to iterate over its elements, printing each one to the screen using the _puts() and _putchar() functions.
+The env.c file contains the envbuiltin() function, which is used to implement the env builtin command. 
+This command is built into the shell and can be used to print the current environment variables to the standard output. 
+The envbuiltin() function takes the environ global array as an argument and uses a while loop to iterate over its elements, 
+printing each one to the screen using the _puts() and _putchar() functions.
 
 
 
 
-The double_free.c file contains the double_free() function, which is used to free the memory allocated for a double pointer array. This is useful for freeing the memory allocated for an array of strings, such as the array of command line arguments used by the shell. The double_free() function takes a double pointer array as an argument and iterates over each element of the array, freeing the memory associated with each element.
+The double_free.c file contains the double_free() function, which is used to free the memory allocated for a double pointer array. 
+This is useful for freeing the memory allocated for an array of strings, such as the array of command line arguments used by the shell. 
+The double_free() function takes a double pointer array as an argument and iterates over each element of the array, 
+freeing the memory associated with each element.
 
 
 
 
-The envbuiltin.c file contains the builtin_exit() function, which is used to implement the exit builtin command. This command is built into the shell and can be used to terminate the shell process. When the exit builtin is used, the shell will clean up any dynamically allocated memory, close any open file streams, and then exit with the specified exit
+The envbuiltin.c file contains the builtin_exit() function, which is used to implement the exit builtin command. 
+This command is built into the shell and can be used to terminate the shell process. When the exit builtin is used, 
+the shell will clean up any dynamically allocated memory, close any open file streams, and then exit with the specified exit
