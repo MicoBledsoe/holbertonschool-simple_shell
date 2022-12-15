@@ -134,10 +134,19 @@ The strtok() function is then called again, this time with the NULL value as its
                         token = strtok(NULL, " ");
 			i++;
 		}
+
 /* if the input is a command typed "env", the environment will be printed */
 /* (if buffer is "env", return our envbuiltin function) */
 /* This code block is a conditional statement that checks if the command entered by the user is "env" (using the _strcmp() function to compare the entered command 
 with the "env" string). If the entered command is "env", the envbuiltin() function is called with the environ global variable as its argument. This function prints the current environment variables to stdout. Then, the buffer and array variables are freed to release their memory, and the loop continues to the next iteration. If the entered command is not "env", the code block is skipped and the program continues to the next step in the loop. */
+
+/* The code starts by calling the "_strcmp" function with the "buffer" and "env" strings as its arguments. The "_strcmp" function is a custom implementation of the standard "strcmp" function, which compares two strings and returns 0 if they are equal. In this case, if "_strcmp" returns 0, it means that the user entered the "env" command.
+
+If "_strcmp" returns 0, the code calls the "envbuiltin" function with the "environ" variable as its argument. The "envbuiltin" function is a custom function that appears to be used for printing the environment variables to the standard output.
+
+Next, the code frees the memory allocated to the "buffer" variable using the "free" function, and then calls the "double_free" function with the "array" variable as its argument. The "double_free" function is a custom function that appears to be used for freeing the memory allocated to the "array" variable and any other variables that it points to.
+
+Finally, the code uses the "continue" statement to skip the rest of the code in the current iteration of the loop and move on to the next iteration. This ensures that the program does not try to execute any other commands if the user entered the "env" command. */
 		if (_strcmp(buffer, "env") == 0)
 		{
 			envbuiltin(environ);
