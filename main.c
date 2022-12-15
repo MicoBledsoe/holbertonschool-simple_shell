@@ -167,7 +167,9 @@ int main(int argc, char **argv)
 /* after child process terminates, parent continues its next execution */
 				wait(&status);
 			}
-                        double_free(array);
+                       
+		       double_free(array);t branch
+
 		}
 		free(pathname);
 		free(buffer);
