@@ -145,8 +145,19 @@ with the "env" string). If the entered command is "env", the envbuiltin() functi
 			double_free(array);
 			continue;
 		}
+		
 /* This block of code below is responsible for executing the command entered by the user. If the input is not a built-in command (such as "env" or "exit"), the code will attempt to execute the input as a command in the shell by searching the directories specified in the PATH environment variable for a valid, executable file with the same name as the command entered by the user. If a valid file is found, the code forks a child process and uses the execve() function to execute the command. Otherwise, the code sets the pathname variable to the command entered by the user and attempts to execute the command from the current working directory. The code continues to prompt for input and execute commands until it is exited. */
 /* if the input is a command typed "exit", the exit func will be called */
+		
+/* checks if the user entered the "exit" command, which is a built-in shell command that terminates the program.
+
+The code starts by calling the "_strcmp" function with the "buffer" and "exit" strings as its arguments. The "_strcmp" function is a custom implementation of the standard "strcmp" function, which compares two strings and returns 0 if they are equal. In this case, if "_strcmp" returns 0, it means that the user entered the "exit" command.
+
+If "_strcmp" returns 0, the code frees the memory allocated to the "buffer" variable using the "free" function, and then calls the "double_free" function with the "array" variable as its argument. The "double_free" function is a custom function that appears to be used for freeing the memory allocated to the "array" variable and any other variables that it points to.
+
+The code then calls the "exit" function with the "exstat" variable as its argument. The "exit" function is a standard C function that terminates the program and returns the specified exit status to the calling process. In this case, the "exstat" variable specifies the exit status that the program should return.
+
+Finally, the code uses the "continue" statement to skip the rest of the code in the current iteration of the loop and move on to the next iteration. This ensures that the program does not try to execute any other commands if the user entered the "exit" command. */
 		if (_strcmp(buffer, "exit") == 0)
 		{
 			free(buffer);
