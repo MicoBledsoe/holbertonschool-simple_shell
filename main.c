@@ -154,8 +154,13 @@ with the "env" string). If the entered command is "env", the envbuiltin() functi
 			exit(exstat);
 			continue;
 		}
-		pPath = _getenv("PATH");
-
+		pPath = _getenv("PATH"); /* FROM LINE 157 - 187 this CODE BLOCK IS DOING: The code starts by calling the "getenv" function with the string "PATH" as its argument. This function is a standard C function that gets the value of the specified environment variable. In this case, the "PATH" environment variable is a list of directories that the program should search for the specified command. The value of "PATH" is returned by "getenv" and stored in the "pPath" variable.
+Next, the code calls the "strtok" function with "pPath" as its first argument and the string ":" as its second argument. The "strtok" function is a standard C function that splits a string into tokens using a specified delimiter. In this case, the delimiter is a colon (:), so the function will split the "pPath" string on colons and return the first token (i.e. the first directory path in the "PATH" variable). This token is stored in the "pathtoken" variable.
+The code then enters a loop that continues until the "pathtoken" variable is NULL, indicating that there are no more tokens to process. Inside the loop, the code first allocates memory for the "pathname" variable using the "malloc" function. This variable will be used to store the full path to the command that the user entered.
+The code then checks if the user-entered command contains a forward slash by calling the "strstr" function with "array[0]" (the first token of the user input) as its first argument and the string "/" as its second argument. If the "strstr" function returns NULL, it means that the user-entered command does not contain a forward slash, and the code assumes that it is the name of an executable file located in one of the directories in the "PATH" variable. In this case, the code concatenates the current directory path from "pathtoken" with the name of the command, and stores the result in "pathname".
+If the user-entered command does contain a forward slash, the code assumes that it is the full path to the command, and it simply copies the command into "pathname" without appending any directory paths. The loop is then terminated by calling the "break" statement.
+After the "pathname" variable has been populated, the code calls the "access" function with "pathname" and the value "X_OK" as its arguments. The "access" function is a standard C function that checks the accessibility of a file. In this case, the "X_OK" value indicates that the code is checking whether the file specified by "pathname" is executable by the current user. If "access" returns 0, it means that the file is executable, and the loop is terminated by calling the "break" statement.
+If "access" does not return 0, it means that the file is not executable, and the code moves on to the next directory path in the "PATH" variable by calling "strtok" with the argument "NULL". This advances the token pointer to the next token in the "PATH" variable, and the "pathtoken" variable is updated with the new directory path. The code then frees the memory allocated to "pathname" and sets the variable to NULL to prepare for the next iteration of the loop.*/
 		pathtoken = strtok(pPath, ":");
 		while (pathtoken)
 		{
@@ -179,7 +184,7 @@ with the "env" string). If the entered command is "env", the envbuiltin() functi
 				break;
 			pathtoken = strtok(NULL, ":");
 			free(pathname);
-			pathname = NULL;
+			pathname = NULL; /* Line 187 */
 		}
 		if (pathtoken == NULL)
 			pathname = _strdup(array[0]);
