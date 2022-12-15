@@ -174,7 +174,7 @@ Finally, the code uses the "continue" statement to skip the rest of the code in 
 			exit(exstat);
 			continue;
 		}
-		pPath = _getenv("PATH"); /* FROM LINE 157 - 187 this CODE BLOCK IS DOING: The code starts by calling the "getenv" function with the string "PATH" as its argument. This function is a standard C function that gets the value of the specified environment variable. In this case, the "PATH" environment variable is a list of directories that the program should search for the specified command. The value of "PATH" is returned by "getenv" and stored in the "pPath" variable.
+		pPath = _getenv("PATH"); /* FROM LINE 177 - 207 this CODE BLOCK IS DOING: The code starts by calling the "getenv" function with the string "PATH" as its argument. This function is a standard C function that gets the value of the specified environment variable. In this case, the "PATH" environment variable is a list of directories that the program should search for the specified command. The value of "PATH" is returned by "getenv" and stored in the "pPath" variable.
 Next, the code calls the "strtok" function with "pPath" as its first argument and the string ":" as its second argument. The "strtok" function is a standard C function that splits a string into tokens using a specified delimiter. In this case, the delimiter is a colon (:), so the function will split the "pPath" string on colons and return the first token (i.e. the first directory path in the "PATH" variable). This token is stored in the "pathtoken" variable.
 The code then enters a loop that continues until the "pathtoken" variable is NULL, indicating that there are no more tokens to process. Inside the loop, the code first allocates memory for the "pathname" variable using the "malloc" function. This variable will be used to store the full path to the command that the user entered.
 The code then checks if the user-entered command contains a forward slash by calling the "strstr" function with "array[0]" (the first token of the user input) as its first argument and the string "/" as its second argument. If the "strstr" function returns NULL, it means that the user-entered command does not contain a forward slash, and the code assumes that it is the name of an executable file located in one of the directories in the "PATH" variable. In this case, the code concatenates the current directory path from "pathtoken" with the name of the command, and stores the result in "pathname".
@@ -206,7 +206,7 @@ If "access" does not return 0, it means that the file is not executable, and the
 			free(pathname);
 			pathname = NULL; /* Line 187 */
 		}
-		if (pathtoken == NULL) /* From Line 189 - 227 this CODE BLOCK IS DOING : It follows a block of code that searches the directories specified by the "PATH" environment variable for the command that the user entered.
+		if (pathtoken == NULL) /* From Line 209 - 265 this CODE BLOCK IS DOING : It follows a block of code that searches the directories specified by the "PATH" environment variable for the command that the user entered.
 
 The code starts by checking if the "pathtoken" variable is NULL, indicating that no executable file was found in any of the directories in the "PATH" variable. If "pathtoken" is NULL, the code assumes that the user-entered command is the full path to the command, and it copies the command into the "pathname" variable using the "strdup" function.
 
