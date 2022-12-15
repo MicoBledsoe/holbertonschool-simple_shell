@@ -98,7 +98,7 @@ This prompts the user to enter a command, which will be read by the program and 
 The isatty() function is called with the STDIN_FILENO constant as its argument. This function returns a non-zero value if its argument is a file descriptor associated with a terminal device, and 0 if it is not. In this case, the isatty() function will return a non-zero value if the program is running in interactive mode, and 0 if it is not.
 If the isatty() function returns a non-zero value (indicating that the program is running in interactive mode), the prompt variable is assigned the string "($) ", which is the prompt string to be printed to the screen. Then, the _puts() function is called with the prompt variable as its argument, which writes the prompt string to the standard output (stdout).
 If the isatty() function returns 0 (indicating that the program is not running in interactive mode), then the code in this block is not executed and the prompt string is not printed to the screen. */
-		if (isatty(STDIN_FILENO) == 1) /* if this was 0 it would be in interactive mode */
+		if (isatty(STDIN_FILENO) == 1)
 		{
 			prompt = "($) ";
 			_puts(prompt);
