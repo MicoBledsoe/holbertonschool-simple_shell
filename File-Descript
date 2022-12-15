@@ -1,28 +1,54 @@
-Main.c FILE ----- The main function is the entry point to the program and is responsible for setting up the environment, reading input from the user, and executing commands. The other functions, such as _putchar() and _puts(), are helper functions that are used by the main function to perform various tasks, such as writing characters and strings to the standard output.
+Main.c FILE ----- The main function is the entry point to the program and is responsible for setting up the environment,
 
+reading input from the user, and executing commands. The other functions, such as _putchar() and _puts(), are helper functions 
 
-
-
-Parse.c FILE ------ function called parse_line() that takes a string as input and returns the number of tokens (i.e. words separated by spaces) in the string. The function uses the strtok() function, which is a standard C function for splitting a string into tokens based on a delimiter. In this case, the delimiter is a space, so the function splits the input string into individual words. It then stores these words in an array of char pointers called tokens and returns the number of tokens that were found.
-
-The parse_line() function also has a helper function called print_string() which is used to print the last token in the tokens array, followed by a newline character. This helper function is a simple implementation of the write() function, which is a standard C function for writing data to a file descriptor.
-
-
-
-
-
-envbuiltin.c FILE ------ function called envbuiltin() that prints the current environment variables to the standard output. It does this by iterating over an array of strings called environ, which is a global variable defined in the standard C library. This array contains the environment variables that are set for the current process.
-
-The envbuiltin() function has a single parameter, environ, which is a double pointer to the environ array. The function then uses a while loop to iterate over the elements in the array, and for each element it prints the string using the _puts() and _putchar() functions. These functions are custom functions that are defined elsewhere in the code, but they likely have similar functionality to the standard puts() and putchar() functions.
-
-The envbuiltin() function returns void, meaning it does not return a value. Instead, it simply prints the environment variables to the standard output and then exits. This is useful for providing the user with information about the current environment, such as the currentworking directory and the user's home directory.
+that are used by the main function to perform various tasks, such as writing characters and strings to the standard output.
 
 
 
 
 
+Parse.c FILE ------ function called parse_line() that takes a string as input and returns the number of tokens
 
-double_free.c FILE ------ called double_free() that frees the memory allocated for a double pointer array. The function takes a double pointer array as an argument and iterates over each element of the array, freeing the memory associated with each element. This is useful for freeing the memory allocated for an array of strings, such as the array variable used in the main() function of the shell. The function does not return a value.
+(i.e. words separated by spaces) in the string. The function uses the strtok() function, which is a standard C function 
+
+for splitting a string into tokens based on a delimiter. In this case, the delimiter is a space, so the function splits the input string into individual words. 
+
+It then stores these words in an array of char pointers called tokens and returns the number of tokens that were found.
+
+The parse_line() function also has a helper function called print_string() which is used to print the last token in the tokens array, followed by a newline character. 
+
+This helper function is a simple implementation of the write() function, which is a standard C function for writing data to a file descriptor.
+
+
+
+
+
+envbuiltin.c FILE ------ function called envbuiltin() that prints the current environment variables to the standard output. 
+
+It does this by iterating over an array of strings called environ, which is a global variable defined in the standard C library. 
+
+This array contains the environment variables that are set for the current process.
+
+The envbuiltin() function has a single parameter, environ, which is a double pointer to the environ array.
+
+The function then uses a while loop to iterate over the elements in the array, and for each element it prints the string using the _puts() and _putchar() functions.
+
+These functions are custom functions that are defined elsewhere in the code, but they likely have similar functionality to the standard puts() and putchar() functions.
+
+The envbuiltin() function returns void, meaning it does not return a value. Instead, it simply prints the environment variables to the standard output and then exits. 
+
+This is useful for providing the user with information about the current environment, such as the currentworking directory and the user's home directory.
+
+
+
+
+
+
+double_free.c FILE ------ called double_free() that frees the memory allocated for a double pointer array. 
+The function takes a double pointer array as an argument and iterates over each element of the array, freeing the memory associated with each element.
+This is useful for freeing the memory allocated for an array of strings, such as the array variable used in the main() function of the shell. 
+The function does not return a value.
 
 The double_free() function is implemented as follows:
 
@@ -39,7 +65,9 @@ Overall, the double_free() function is a simple and efficient way to free the me
 
 
 
-builtins.c FILE ------- function called builtfunc() that implements the exit builtin command for a simple shell program. The exit builtin is a command that is built intothe shell and can be used to terminate the shell process. When the exit builtin is used, the shell will clean up any dynamically allocated memory, close any open file streams, and then exit with the specified exit status.
+builtins.c FILE ------- function called builtfunc() that implements the exit builtin command for a simple shell program. 
+The exit builtin is a command that is built intothe shell and can be used to terminate the shell process. When the exit builtin is used, 
+the shell will clean up any dynamically allocated memory, close any open file streams, and then exit with the specified exit status.
 
 The builtfunc() function is implemented as follows:
 
@@ -58,7 +86,9 @@ If the first argument is not "exit", then the function does nothing and simply r
 
 
 
-_getenv.c FILE ------ The _getenv() function takes a string containing the name of an environment variable as an argument and searches the environ array for a match. If a match is found, the function duplicates the value of the environment variable using the _strdup() function and returns the result. If no match is found, the function returns NULL. This function is useful for retrieving the value of an environment variable, such as the PATH variable, which is used to find the location of executables.
+_getenv.c FILE ------ The _getenv() function takes a string containing the name of an environment variable as an argument and searches the environ array for a match. 
+If a match is found, the function duplicates the value of the environment variable using the _strdup() function and returns the result. If no match is found, 
+the function returns NULL. This function is useful for retrieving the value of an environment variable, such as the PATH variable, which is used to find the location of executables.
 
 
 
