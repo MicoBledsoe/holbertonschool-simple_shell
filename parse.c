@@ -9,6 +9,11 @@ The function also has a helper function, print_string, which simply writes the i
  * Return: string
  */
 
+/*  CODE BLOCK :function called print_string, which takes a string (pointer to a char) as input. The function returns the number of bytes written to the standard output 
+(terminal) using the write function. The write function takes three arguments: a file descriptor, the string to write, and the length of the string. In this case, the file descriptor is STDOUT_FILENO, 
+which is a macro that represents the standard output file descriptor. The length of the string is obtained using the strlen function, which is a standard C function for finding the length of a string. 
+The write function returns the number of bytes that were written, so this value is also returned by the print_string function. */
+
 int print_string(char *str)
 {
 	return (write(STDOUT_FILENO, str, strlen(str)));
