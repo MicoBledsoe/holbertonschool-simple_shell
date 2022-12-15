@@ -14,6 +14,12 @@ void builtfunc(char **buf, char **args, char **env, int *exstat)
         /* Check if the first argument is "exit" */
         if (_strcmp(args[0], "exit") == 0)
         {
+                /* Set the exit status to 0 if no exit status is specified */
+                if (args[1] == NULL)
+                {
+                        *exstat = 0;
+                }
+
                 /* Free memory used by dynamically allocated variables */
                 free(buf);
                 free(args);
@@ -28,4 +34,3 @@ void builtfunc(char **buf, char **args, char **env, int *exstat)
                 exit(*exstat);
         }
 }
-
