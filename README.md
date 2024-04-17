@@ -27,13 +27,13 @@ The shell operates in a loop, reading user input, parsing it into tokens, and ex
 ## Usage Instructions
 
 Compile the shell with the following command:
-```bash
+#```bash
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 ./hsh
 
 ### Part 4: List of Functions and System Calls
-```markdown
+#```markdown
 ## List of Allowed Functions and System Calls
 
 - `access` (man 2 access)
